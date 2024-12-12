@@ -16,13 +16,14 @@ function Home() {
   }
 
   return (
-    <ul>
-      {data.map((brand) => (
-        <li key={brand.codigo}>
-          {brand.nome} (Código: {brand.codigo})
-        </li>
-      ))}
-    </ul>
+    <h1>ola</h1>
+    // <ul>
+    //   {data.map((brand) => (
+    //     <li key={brand.codigo}>
+    //       {brand.nome} (Código: {brand.codigo})
+    //     </li>
+    //   ))}
+    // </ul>
   );
 }
 

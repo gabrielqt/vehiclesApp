@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
 
 function Base() {
   return (
     <div>
-      <h1>oi teste</h1>
-      <p>teste</p>
+      <AcUnitIcon color="primary" />
       <Outlet />
     </div>
   );
