@@ -1,11 +1,10 @@
 import { Outlet } from "react-router-dom";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
+import CustomAppBar from "../components/CustomAppBar";
 
 function Base() {
   return (
     <div>
-      <AcUnitIcon color="primary" />
-      <Outlet />
+      <CustomAppBar />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import getBrands from "../services/fetchServices";
+import Loading from "../components/Loading";
 
 function Home() {
   const { data, isLoading, error } = useQuery({
@@ -8,7 +9,7 @@ function Home() {
   });
 
   if (isLoading) {
-    return <h1>carregando</h1>;
+    return <Loading />;
   }
 
   if (error) {
@@ -16,7 +17,7 @@ function Home() {
   }
 
   return (
-    <h1>ola</h1>
+    <div></div>
     // <ul>
     //   {data.map((brand) => (
     //     <li key={brand.codigo}>

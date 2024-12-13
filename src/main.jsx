@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Base from "./pages/Base";
 import theme from "./assets/theme.js";
 import { ThemeProvider } from "@emotion/react";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <RouterProvider router={router} />
       </ThemeProvider>
     </QueryClientProvider>

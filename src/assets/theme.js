@@ -3,29 +3,32 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2",
-      light: "#63a4ff",
-      dark: "#004ba0",
+      main: "#401F3E",
+      light: "#3F2E56",
+      dark: "#453F78",
       contrastText: "#fff",
-      secondary: {
-        main: "#9c27b0",
-        light: "#d05ce3",
-        dark: "#6a0080",
-        contrastText: "#fff",
-      },
-      error: {
-        main: "#f44336",
-      },
-      warning: {
-        main: "#ff9800",
-      },
-      info: {
-        main: "#2196f3",
-      },
-      success: {
-        main: "#4caf50",
-      },
     },
+    secondary: {
+      main: "#759AAB",
+      light: "#FAF2A1",
+      dark: "#000000",
+      contrastText: "#fff",
+    },
+    error: {
+      main: "#f44336",
+    },
+    warning: {
+      main: "#ff9800",
+    },
+    info: {
+      main: "#6ED4DD",
+    },
+    success: {
+      main: "#4caf50",
+    },
+  },
+  typography: {
+    fontFamily: "'Urbanist', sans-serif",
   },
 });
 
