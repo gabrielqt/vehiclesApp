@@ -11,7 +11,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "app/",
     element: <Base />,
     children: [
       {

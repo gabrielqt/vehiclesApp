@@ -6,8 +6,33 @@ export default function InputComplete(props) {
     <Autocomplete
       disablePortal
       options={props.data}
-      sx={{ width: 300, bgcolor: "background.paper", m: 2, borderRadius: 2 }}
-      renderInput={(params) => <TextField {...params} label={props.title} />}
+      sx={{
+        width: 300,
+        m: 2,
+        borderRadius: 2,
+      }}
+      onInputChange={() => {
+        console.log("oi");
+      }}
+      color="success"
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label={props.title}
+          sx={{
+            "& .MuiInputBase-root": {
+              color: "#fff",
+              border: "1px solid #fff",
+            },
+            "& .MuiInputLabel-root": {
+              color: "#fff",
+            },
+            "& .MuiOutlinedInput-root.Mui-focused": {
+              border: "none",
+            },
+          }}
+        />
+      )}
     />
   );
 }
