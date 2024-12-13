@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import getBrands from "../services/fetchServices";
 import Loading from "../components/Loading";
 import { useEffect, useState } from "react";
-
+import InputComplete from "../components/InputComplete";
+import ListCards from "../components/ListCards";
 function Home() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["carBrands"], // Identificador único do cache
@@ -31,7 +32,18 @@ function Home() {
   }
 
   if (!isLoading) {
-    return <h1>ola</h1>;
+    return (
+      <div>
+        <InputComplete
+          title={"Nome da marca"}
+          data={data.map((brand) => {
+            return brand.nome;
+          })}
+        />
+        <br></br>
+        <ListCards data={data} />
+      </div>
+    );
   }
 }
 
