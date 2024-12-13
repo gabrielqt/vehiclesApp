@@ -34,7 +34,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: "#F5D9D9", // Cor de fundo do body
+          backgroundColor: "#37505C", // Cor de fundo do body
           margin: 0,
           padding: 0,
           boxSizing: "border-box",
