@@ -16,16 +16,7 @@ function Home() {
     return <h1>{error.message}</h1>;
   }
 
-  return (
-    <div></div>
-    // <ul>
-    //   {data.map((brand) => (
-    //     <li key={brand.codigo}>
-    //       {brand.nome} (Código: {brand.codigo})
-    //     </li>
-    //   ))}
-    // </ul>
-  );
+  return <h1>ola</h1>;
 }
 
 export default Home;

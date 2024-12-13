@@ -3,11 +3,7 @@ import Container from "@mui/material/Container";
 // or
 
 function Loading() {
-  return (
-    <Container fixed maxWidth="sm">
-      <LoadingButton loading={true} loadingPosition="center" />
-    </Container>
-  );
+  return <h1>loading</h1>;
 }
 
 export default Loading;

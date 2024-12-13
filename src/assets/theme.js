@@ -3,16 +3,16 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#401F3E",
-      light: "#3F2E56",
-      dark: "#453F78",
-      contrastText: "#fff",
+      main: "#C10B0B",
+      light: "#F03838",
+      dark: "#00000",
+      contrastText: "#F5D9D9",
     },
     secondary: {
-      main: "#759AAB",
-      light: "#FAF2A1",
+      main: "#BF894E",
+      light: "#E3A15A",
       dark: "#000000",
-      contrastText: "#fff",
+      contrastText: "#F5D9D9",
     },
     error: {
       main: "#f44336",
@@ -29,6 +29,18 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "'Urbanist', sans-serif",
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: "#F5D9D9", // Cor de fundo do body
+          margin: 0,
+          padding: 0,
+          boxSizing: "border-box",
+        },
+      },
+    },
   },
 });
 

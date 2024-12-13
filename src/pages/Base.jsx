@@ -5,6 +5,7 @@ function Base() {
   return (
     <div>
       <CustomAppBar />
+      <Outlet />
     </div>
   );
 }
