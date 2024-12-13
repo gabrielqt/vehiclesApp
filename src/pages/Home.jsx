@@ -3,25 +3,29 @@ import getBrands from "../services/fetchServices";
 import Loading from "../components/Loading";
 import { useEffect, useState } from "react";
 import InputComplete from "../components/InputComplete";
+import ButtonSearchBrand from "../components/ButtonSearchBrand";
 import ListCards from "../components/ListCards";
+import { Box } from "@mui/material";
+
 function Home() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["carBrands"], // Identificador único do cache
-    queryFn: getBrands, // Função que busca os dados
+    queryKey: ["carBrands"], // dentificador único do cache
+    queryFn: getBrands, // função que busca os dados
   });
 
   const [fakeLoading, setFakeLoading] = useState(true);
+  const [brandSearch, setBrandSearch] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeout(() => {
+    if (data) {
+      const timer = setTimeout(() => {
         setFakeLoading(false);
-        if (!fakeLoading && isLoading) {
-          return;
-        }
+        setBrandSearch(data);
       }, 2000);
-    });
-  });
+
+      return () => clearTimeout(timer); // limpa o timer para evitar vazamentos de memória
+    }
+  }, [data]);
 
   if (fakeLoading) {
     return <Loading />;
@@ -34,14 +38,16 @@ function Home() {
   if (!isLoading) {
     return (
       <div>
-        <InputComplete
-          title={"Nome da marca"}
-          data={data.map((brand) => {
-            return brand.nome;
-          })}
-        />
-        <br></br>
-        <ListCards data={data} />
+        <Box sx={{ display: "flex" }}>
+          <InputComplete
+            title={"Nome da marca"}
+            data={data.map((brand) => {
+              return brand.nome;
+            })}
+          />
+          <ButtonSearchBrand />
+        </Box>
+        <ListCards brandSearch={brandSearch} />
       </div>
     );
   }

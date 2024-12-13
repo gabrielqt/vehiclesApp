@@ -23,7 +23,7 @@ export default function ListCards(props) {
         columns={{ xs: 4, sm: 8, md: 12 }}
         sx={{ m: 2 }}
       >
-        {props.data.map((brand) => (
+        {props.brandSearch.map((brand) => (
           <Grid key={brand.codigo} size={{ xs: 2, sm: 4, md: 4 }}>
             <Item>{brand.nome}</Item>
           </Grid>
