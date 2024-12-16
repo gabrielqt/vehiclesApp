@@ -8,6 +8,7 @@ import Base from "./pages/Base";
 import theme from "./assets/theme.js";
 import { ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
+import StartPage from "./pages/StartPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
     ],
+  },
+  {
+    path: "/",
+    element: <StartPage />,
   },
 ]);
 

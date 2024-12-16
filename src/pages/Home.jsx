@@ -61,6 +61,7 @@ function Home() {
           <InputComplete
             title={"Nome da marca"}
             data={data.map((data) => {
+              console.log(data.nome);
               return data.nome;
             })}
             handleChange={handleChange}
