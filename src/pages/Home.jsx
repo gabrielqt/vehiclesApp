@@ -3,9 +3,8 @@ import getBrands from "../services/fetchServices";
 import Loading from "../components/Loading";
 import { useEffect, useState } from "react";
 import InputComplete from "../components/InputComplete";
-import ButtonSearchBrand from "../components/ButtonSearchBrand";
 import ListCards from "../components/ListCards";
-import { Box } from "@mui/material";
+import { Box, capitalize } from "@mui/material";
 
 function Home() {
   const { data, isLoading, error } = useQuery({
@@ -15,6 +14,7 @@ function Home() {
 
   const [fakeLoading, setFakeLoading] = useState(true);
   const [brandSearch, setBrandSearch] = useState([]);
+  const [handleInput, setHandleInput] = useState("");
 
   useEffect(() => {
     if (data) {
@@ -26,6 +26,16 @@ function Home() {
       return () => clearTimeout(timer); // limpa o timer para evitar vazamentos de memória
     }
   }, [data]);
+
+  function handleChange(event) {
+    if (event.target.value.trim() != null && event.target.value.trim() !== "") {
+      setHandleInput(capitalize(event.target.value));
+      console.log(handleInput);
+      setBrandSearch(data.filter((e) => e.nome.startsWith(handleInput)));
+      return;
+    }
+    setBrandSearch(data);
+  }
 
   if (fakeLoading) {
     return <Loading />;
@@ -41,11 +51,11 @@ function Home() {
         <Box sx={{ display: "flex" }}>
           <InputComplete
             title={"Nome da marca"}
-            data={data.map((brand) => {
-              return brand.nome;
+            data={data.map((data) => {
+              return data.nome;
             })}
+            handleChange={handleChange}
           />
-          <ButtonSearchBrand />
         </Box>
         <ListCards brandSearch={brandSearch} />
       </div>

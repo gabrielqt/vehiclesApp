@@ -1,4 +1,3 @@
-import * as React from "react";
 import Grid from "@mui/material/Grid2";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -6,7 +5,6 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const style = {
   backgroundColor: "secondary.main",
-  position: "absolute",
   color: "primary.contrastText",
   boxShadow: "0px -4px 10px rgba(0, 0, 0, 0.5)",
   marginTop: 10,

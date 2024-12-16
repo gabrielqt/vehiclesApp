@@ -11,8 +11,11 @@ export default function InputComplete(props) {
         m: 2,
         borderRadius: 2,
       }}
-      onInputChange={() => {
-        console.log("oi");
+      onInputChange={(event) => {
+        props.handleChange(event);
+      }}
+      onChange={(event) => {
+        props.handlechange(event);
       }}
       color="success"
       renderInput={(params) => (
