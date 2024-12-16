@@ -11,11 +11,12 @@ export default function InputComplete(props) {
         m: 2,
         borderRadius: 2,
       }}
-      onInputChange={(event) => {
-        props.handleChange(event);
+      onInputChange={(event, newInputValue) => {
+        props.handleChange(newInputValue);
       }}
-      onChange={(event) => {
-        props.handlechange(event);
+      onChange={(event, newValue) => {
+        // Captura quando o usuário seleciona uma opção
+        props.handleSelect(newValue);
       }}
       color="success"
       renderInput={(params) => (

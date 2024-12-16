@@ -27,15 +27,24 @@ function Home() {
     }
   }, [data]);
 
-  function handleChange(event) {
-    if (event.target.value.trim() != null && event.target.value.trim() !== "") {
-      setHandleInput(capitalize(event.target.value));
-      console.log(handleInput);
+  function handleChange(NewValue) {
+    if (NewValue.trim() != null && NewValue.trim() !== "") {
+      setHandleInput(capitalize(NewValue));
+      // filtra o array (retorna um novo array:)
       setBrandSearch(data.filter((e) => e.nome.startsWith(handleInput)));
       return;
     }
     setBrandSearch(data);
   }
+
+  const handleOptionSelect = (value) => {
+    // filtra o array (retorna um novo array:)
+    if (value == null || value.trim() == "") {
+      setBrandSearch(data);
+      return;
+    }
+    setBrandSearch(data.filter((e) => e.nome.startsWith(value)));
+  };
 
   if (fakeLoading) {
     return <Loading />;
@@ -55,6 +64,7 @@ function Home() {
               return data.nome;
             })}
             handleChange={handleChange}
+            handleSelect={handleOptionSelect}
           />
         </Box>
         <ListCards brandSearch={brandSearch} />
