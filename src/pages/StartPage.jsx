@@ -1,14 +1,7 @@
 import { motion } from "motion/react";
 import "../assets/startpage.css";
 import { useNavigate } from "react-router-dom";
-
-const style = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100vh",
-  width: "100vw",
-};
+import CarIcon from "../components/CarIcon";
 
 export default function StartPage() {
   const navigate = useNavigate();
@@ -16,10 +9,29 @@ export default function StartPage() {
   return (
     <div className="divmain">
       <motion.div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
         initial={{ opacity: 0, scale: 0.2 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={{
+          opacity: 1,
+          scale: 0.94,
+        }}
         transition={{ duration: 2, type: "spring" }}
       >
+        <motion.div
+          className="carIcon"
+          animate={{ x: [10000, 0] }}
+          transition={{ duration: 4 }}
+        >
+          <CarIcon color="white" width="64" height="64" />
+        </motion.div>
+
         <h1 className="text">
           <span className="spanTitle">Car</span>App
         </h1>
@@ -38,6 +50,7 @@ export default function StartPage() {
           </motion.button>
         </p>
       </motion.div>
+      <div className="text">oi</div>
     </div>
   );
 }
