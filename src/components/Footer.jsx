@@ -28,8 +28,8 @@ export default function Footer() {
       <Grid size={{ xs: 6, md: 4 }}>
         <p>
           <GitHubIcon />{" "}
-          <a target="_blank" href="https://github.com/gabrielqt/">
-            github.com/gabrielqt/
+          <a target="_blank" href="https://deividfortuna.github.io/fipe/">
+            https://deividfortuna.github.io/fipe/
           </a>
         </p>
         <p>
