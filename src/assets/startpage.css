@@ -68,15 +68,6 @@
   }
 }
 
-.divsecond {
-  background-color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 100vw;
-}
-
 .arrowIcon {
   cursor: pointer;
   position: relative;
@@ -97,4 +88,32 @@
 }
 .arrowIcon:hover {
   color: white;
+}
+
+.divsecond {
+  background-color: #f7dcdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.divsecond a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.line {
+  display: block;
+  height: 1px;
+  width: 90vw;
+  background-color: black;
+  margin-block: 2rem;
+}
+
+.contacts {
+  display: flex;
 }

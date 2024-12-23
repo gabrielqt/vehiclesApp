@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import CarIcon from "../components/CarIcon";
 import { useRef } from "react";
 import KeyboardDoubleArrowDownRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowDownRounded";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import CopyEmail from "../components/CopyEmail";
 
 export default function StartPage() {
   const navigate = useNavigate();
@@ -70,9 +73,24 @@ export default function StartPage() {
           Esse projeto foi feito graças a API do{" "}
           <span style={{ fontWeight: 800 }}>Deivid Fortuna</span>:
         </h2>
-        <a target="_blank" href="https://github.com/gabrielqt/">
-          github.com/gabrielqt/
+        <a target="_blank" href="https://parallelum.com.br/fipe/">
+          https://parallelum.com.br/fipe/
         </a>
+        <p>
+          Considere apoiar o incrível trabalho dele visitando/doando sua API e
+          compartilhando!
+        </p>
+        <div className="line" />
+        <h2>Contato:</h2>
+        <div className="contacts">
+          <a target="_blank" href="https://github.com/gabrielqt/">
+            <GitHubIcon />
+          </a>
+          <a target="_blank" href="https://github.com/gabrielqt/">
+            <LinkedInIcon />
+          </a>
+          <CopyEmail />
+        </div>
       </div>
     </div>
   );
