@@ -1,13 +1,14 @@
 import React from "react";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import Alert from "@mui/material/Alert";
 
-export default function CopyEmail() {
+const CopyEmail = ({ handleDisplaySuccess }) => {
   const handleCopy = () => {
     const textToCopy = "gabriel.traiano@outlook.com";
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
-        alert("Texto copiado para a área de transferência!");
+        handleDisplaySuccess();
       })
       .catch((err) => {
         console.error("Erro ao copiar o texto: ", err);
@@ -28,4 +29,6 @@ export default function CopyEmail() {
       </button>
     </div>
   );
-}
+};
+
+export default CopyEmail;

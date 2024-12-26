@@ -117,3 +117,22 @@
 .contacts {
   display: flex;
 }
+
+.alert {
+  animation: swoosh 4s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes swoosh {
+  0% {
+    transform: translateY(30vh);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

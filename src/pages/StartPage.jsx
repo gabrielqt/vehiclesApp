@@ -2,19 +2,30 @@ import { motion } from "motion/react";
 import "../assets/startpage.css";
 import { useNavigate } from "react-router-dom";
 import CarIcon from "../components/CarIcon";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import KeyboardDoubleArrowDownRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowDownRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import CopyEmail from "../components/CopyEmail";
+import { Alert } from "@mui/material";
 
 export default function StartPage() {
   const navigate = useNavigate();
   const divSecondRef = useRef(null);
+  const [displaySuccess, setDisplaySuccess] = useState("none");
+  const [displayError, setDisplayError] = useState("none");
 
   const scrollToDivSecond = () => {
     divSecondRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  function handleDisplaySuccess() {
+    if (displaySuccess === "none") {
+      setDisplaySuccess("flex");
+    } else {
+      setDisplaySuccess("none");
+    }
+  }
 
   return (
     <div className="divmain">
@@ -89,8 +100,15 @@ export default function StartPage() {
           <a target="_blank" href="https://github.com/gabrielqt/">
             <LinkedInIcon />
           </a>
-          <CopyEmail />
+          <CopyEmail handleDisplaySuccess={handleDisplaySuccess} />
         </div>
+        <Alert
+          severity="success"
+          className="alert"
+          sx={{ display: displaySuccess, position: "absolute" }}
+        >
+          E-mail copiado.
+        </Alert>
       </div>
     </div>
   );
