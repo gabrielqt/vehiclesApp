@@ -9,6 +9,7 @@ import theme from "./assets/theme.js";
 import { ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import StartPage from "./pages/StartPage.jsx";
+import ListVehicles from "./pages/ListVehicles.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <Home />,
+      },
+      {
+        path: "home/marcas/:id",
+        element: <ListVehicles />,
       },
     ],
   },

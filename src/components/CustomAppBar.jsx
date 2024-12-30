@@ -7,8 +7,11 @@ import IconButton from "@mui/material/IconButton";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
 import ModalSearch from "./ModalSearch";
+import { useNavigate } from "react-router-dom";
 
 export default function ButtonAppBar() {
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -19,6 +22,7 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => navigate("/")}
           >
             <DirectionsCarFilledIcon />
           </IconButton>

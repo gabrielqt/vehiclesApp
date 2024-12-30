@@ -1,6 +1,7 @@
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
+import { useNavigate } from "react-router-dom";
 
 // xs:  // (celulares)
 // sm:  //  (tablets)
@@ -9,9 +10,9 @@ import Grid from "@mui/material/Grid2";
 const Item = styled("div")(({ theme }) => ({
   ...theme.typography.body2,
   textAlign: "center",
-  backgroundColor: "#f5f5f5", // Cor de fundo (pode ser ajustada)
-  padding: theme.spacing(2), // Espaçamento interno
-  borderRadius: "8px", // Borda arredondada
+  backgroundColor: "#f5f5f5",
+  padding: theme.spacing(2),
+  borderRadius: "8px",
   width: 130,
   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.9)",
   transition: "0.2s ease all", // Sombra leve
@@ -25,6 +26,8 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 export default function ListCards(props) {
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -39,7 +42,7 @@ export default function ListCards(props) {
             size={{ xs: 2, sm: 4, md: 4 }}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Item src="">
+            <Item onClick={() => navigate("/app/home/marcas/" + brand.codigo)}>
               <img src={`/images/${brand.nome}.png`} />
             </Item>
           </Grid>

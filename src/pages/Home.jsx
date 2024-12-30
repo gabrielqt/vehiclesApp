@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import getBrands from "../services/fetchServices";
+import getBrands from "../services/getBrands";
 import Loading from "../components/Loading";
 import { useEffect, useState } from "react";
 import InputComplete from "../components/InputComplete";
