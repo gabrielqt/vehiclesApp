@@ -22,7 +22,7 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/app/home")}
           >
             <DirectionsCarFilledIcon />
           </IconButton>

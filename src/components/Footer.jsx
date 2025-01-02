@@ -9,7 +9,7 @@ const style = {
   boxShadow: "0px -4px 10px rgba(0, 0, 0, 0.5)",
   marginTop: 10,
   width: 1,
-  p: 2,
+  p: 1,
   "& a": {
     color: "black",
     textDecoration: "none",
@@ -18,18 +18,22 @@ const style = {
   },
 };
 
+// xs:  // (celulares)
+// sm:  //  (tablets)
+// md:  //  (PCs)
+
 export default function Footer() {
   return (
     <Grid sx={style} container spacing={2}>
-      <Grid size={{ xs: 6, md: 8 }}>
+      <Grid size={{ xs: 10, md: 8 }}>
         <h3>Car App - Gabriel Augusto Queiroz Traiano</h3>
         <p>API utilizada: https://deividfortuna.github.io/fipe/</p>
       </Grid>
-      <Grid size={{ xs: 6, md: 4 }}>
+      <Grid size={{ xs: 10, md: 4 }}>
         <p>
           <GitHubIcon />{" "}
-          <a target="_blank" href="https://deividfortuna.github.io/fipe/">
-            https://deividfortuna.github.io/fipe/
+          <a target="_blank" href="https://github.com/gabrielqt/">
+            github.com/gabrielqt/
           </a>
         </p>
         <p>
@@ -42,7 +46,7 @@ export default function Footer() {
           </a>
         </p>
       </Grid>
-      <Grid size={{ xs: 6, md: 4 }}>
+      <Grid size={{ xs: 10, md: 4 }}>
         <p>
           <EmailIcon />
           <a href="mailto:gabriel.traiano@outlook.com">

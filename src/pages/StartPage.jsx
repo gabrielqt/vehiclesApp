@@ -97,7 +97,10 @@ export default function StartPage() {
           <a target="_blank" href="https://github.com/gabrielqt/">
             <GitHubIcon />
           </a>
-          <a target="_blank" href="https://github.com/gabrielqt/">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/gabriel-queiroz4/"
+          >
             <LinkedInIcon />
           </a>
           <CopyEmail handleDisplaySuccess={handleDisplaySuccess} />

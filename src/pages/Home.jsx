@@ -21,7 +21,7 @@ function Home() {
       const timer = setTimeout(() => {
         setFakeLoading(false);
         setBrandSearch(data);
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(timer); // limpa o timer para evitar vazamentos de memória
     }
@@ -61,7 +61,6 @@ function Home() {
           <InputComplete
             title={"Nome da marca"}
             data={data.map((data) => {
-              console.log(data.nome);
               return data.nome;
             })}
             handleChange={handleChange}
