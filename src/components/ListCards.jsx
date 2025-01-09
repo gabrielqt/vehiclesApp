@@ -42,7 +42,13 @@ export default function ListCards(props) {
             size={{ xs: 2, sm: 4, md: 4 }}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Item onClick={() => navigate("/app/home/marcas/" + brand.codigo)}>
+            <Item
+              onClick={() =>
+                navigate(
+                  `/app/home/marcas?nome=${brand.nome}&id=${brand.codigo}`
+                )
+              }
+            >
               <img src={`/images/${brand.nome}.png`} />
             </Item>
           </Grid>

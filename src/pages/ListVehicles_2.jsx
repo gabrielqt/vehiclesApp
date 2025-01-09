@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import getVehiclesByBrand from "../services/getVehiclesByBrand";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
-import { Navigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
 const Item = styled("div")(({ theme }) => ({
@@ -22,10 +21,8 @@ const Item = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function ListVehicles() {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get("id");
+export default function ListVehicles_2() {
+  const { id } = useParams();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["carModels", id], // adiciona o parâmetro ao queryKey

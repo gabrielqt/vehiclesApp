@@ -10,6 +10,7 @@ import { ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import StartPage from "./pages/StartPage.jsx";
 import ListVehicles from "./pages/ListVehicles.jsx";
+import ListVehicles_2 from "./pages/ListVehicles_2.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "home/marcas/:id",
+        path: "home/marcas/", //usando query params
         element: <ListVehicles />,
+        children: [
+          {
+            path: "home",
+            element: <ListVehicles_2 />,
+          },
+        ],
       },
     ],
   },
