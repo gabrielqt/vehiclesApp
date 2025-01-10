@@ -22,11 +22,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "home/marcas/", //usando query params
+        path: "home/marca/", //usando query params
         element: <ListVehicles />,
         children: [
           {
-            path: "home",
+            path: "modelo/:codigo",
             element: <ListVehicles_2 />,
           },
         ],

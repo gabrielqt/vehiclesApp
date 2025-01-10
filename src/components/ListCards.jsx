@@ -45,7 +45,7 @@ export default function ListCards(props) {
             <Item
               onClick={() =>
                 navigate(
-                  `/app/home/marcas?nome=${brand.nome}&id=${brand.codigo}`
+                  `/app/home/marca?nome=${brand.nome}&id=${brand.codigo}`
                 )
               }
             >

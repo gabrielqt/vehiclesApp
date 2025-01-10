@@ -52,7 +52,11 @@ export default function ListVehicles() {
               size={{ xs: 6, sm: 6, md: 2 }}
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              <Item onClick={() => console.log("Oi")}>
+              <Item
+                onClick={() =>
+                  navigate(`/app/home/marca/modelo/${modelo.codigo}`)
+                }
+              >
                 <p>{modelo.nome}</p>
               </Item>
             </Grid>

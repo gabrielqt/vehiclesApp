@@ -42,15 +42,15 @@ export default function ListVehicles_2() {
           justifyContent="center"
           alignItems="center"
         >
-          {data.modelos.map((modelo) => (
+          {data.modelos.map((ano) => (
             <Grid
-              key={modelo.codigo}
+              key={ano.codigo}
               item
               size={{ xs: 6, sm: 6, md: 2 }}
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <Item onClick={() => console.log("Oi")}>
-                <p>{modelo.nome}</p>
+                <p>{ano.nome}</p>
               </Item>
             </Grid>
           ))}
