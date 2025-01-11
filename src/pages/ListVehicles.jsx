@@ -54,7 +54,9 @@ export default function ListVehicles() {
             >
               <Item
                 onClick={() =>
-                  navigate(`/app/home/marca/modelo/${modelo.codigo}`)
+                  navigate(
+                    `/app/home/marca/modelo?nome=${modelo.nome}&id_modelo=${modelo.codigo}&id_marca=${id}`
+                  )
                 }
               >
                 <p>{modelo.nome}</p>

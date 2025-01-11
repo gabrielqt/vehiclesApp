@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getVehiclesByBrand = async (id_modelo, id_marca) => {
+const getYearVehicles = async (id_modelo, id_marca) => {
   try {
     const response = await axios.get(
       `https://parallelum.com.br/fipe/api/v1/carros/marcas/${id_marca}/modelos/${id_modelo}/anos`
@@ -12,4 +12,4 @@ const getVehiclesByBrand = async (id_modelo, id_marca) => {
   }
 };
 
-export default getVehiclesByBrand;
+export default getYearVehicles;

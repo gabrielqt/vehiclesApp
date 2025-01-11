@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import getVehiclesByBrand from "../services/getVehiclesByBrand";
-import { useParams } from "react-router-dom";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import { useSearchParams } from "react-router-dom";
+import getYearVehicles from "../services/getYearVehicles";
 
 const Item = styled("div")(({ theme }) => ({
   ...theme.typography.body2,
@@ -22,27 +21,34 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 export default function ListVehicles_2() {
-  const { id } = useParams();
+  const [searchParams] = useSearchParams();
+  const idModelo = searchParams.get("id_modelo");
+  const idMarca = searchParams.get("id_marca");
+  const nomeModelo = searchParams.get("nome");
+  console.log(idModelo);
+  console.log(idMarca);
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["carModels", id], // adiciona o parâmetro ao queryKey
+    queryKey: ["carModels", idModelo, idMarca], // adiciona o parâmetro ao queryKey
     // cria uma função que passa querykey como argumento (em seguida retorna a queryFn)
     queryFn: ({ queryKey }) => {
-      const [, id] = queryKey; // extrai o parâmetro do queryKey
-      return getVehiclesByBrand(id); // passa o parâmetro para a função
+      const [, idModelo, idMarca] = queryKey; // extrai o parâmetro do queryKey
+      return getYearVehicles(idModelo, idMarca); // passa o parâmetro para a função
     },
   });
 
   if (!isLoading) {
     return (
       <Box sx={{ flexGrow: 1, padding: 2 }}>
+        <h1>{nomeModelo}</h1>
+        <br />
         <Grid
           container
           spacing={2} // espaçamento entre os itens
           justifyContent="center"
           alignItems="center"
         >
-          {data.modelos.map((ano) => (
+          {data.map((ano) => (
             <Grid
               key={ano.codigo}
               item
