@@ -4,6 +4,9 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import { useSearchParams } from "react-router-dom";
 import getYearVehicles from "../services/getYearVehicles";
+import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
+import CarIcon from "../components/CarIcon";
+import { useNavigate } from "react-router-dom";
 
 const Item = styled("div")(({ theme }) => ({
   ...theme.typography.body2,
@@ -21,6 +24,8 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 export default function ListVehicles_2() {
+  const navigate = useNavigate();
+
   const [searchParams] = useSearchParams();
   const idModelo = searchParams.get("id_modelo");
   const idMarca = searchParams.get("id_marca");
@@ -40,7 +45,7 @@ export default function ListVehicles_2() {
   if (!isLoading) {
     return (
       <Box sx={{ flexGrow: 1, padding: 2 }}>
-        <h1>{nomeModelo}</h1>
+        <h1 style={{ color: "white" }}>{nomeModelo}</h1>
         <br />
         <Grid
           container
@@ -55,7 +60,7 @@ export default function ListVehicles_2() {
               size={{ xs: 6, sm: 6, md: 2 }}
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              <Item onClick={() => console.log("Oi")}>
+              <Item onClick={() => navigate(`${ano.codigo}`)}>
                 <p>{ano.nome}</p>
               </Item>
             </Grid>

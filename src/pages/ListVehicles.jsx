@@ -26,6 +26,7 @@ export default function ListVehicles() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
+  const nome = searchParams.get("nome");
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["carModels", id], // adiciona o parâmetro ao queryKey
@@ -39,6 +40,8 @@ export default function ListVehicles() {
   if (!isLoading) {
     return (
       <Box sx={{ flexGrow: 1, padding: 2 }}>
+        <h1 style={{ color: "white" }}>{nome}</h1>
+
         <Grid
           container
           spacing={2} // espaçamento entre os itens

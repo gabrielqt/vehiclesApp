@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         path: "home/marca/modelo",
         element: <ListVehicles_2 />,
       },
+      {
+        path: "home/marca/modelo/:id",
+        element: <ListVehicles_2 />,
+      },
     ],
   },
   {
